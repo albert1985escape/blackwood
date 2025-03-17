@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTAL DEL EMPLEADO - Blackwood International CO.</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 3em auto 0;
+            padding: 20px;
+            border: 2px solid red;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            border-radius: 5px;
+        }
+        h1, .company-name {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .content {
+            display: flex;
+            margin-top: 20px;
+        }
+        .image-container {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        .text-container {
+            width: 60%;
+            text-align: left;
+            padding-left: 20px;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .countdown-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .countdown-text {
+            color: red;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        #countdown {
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PORTAL DEL EMPLEADO</h1>
+        <p class="company-name">Blackwood International CO.</p>
+        
+        <div class="content">
+            <div class="image-container">
+                <img src="paciente13.jpg" alt="Paciente 13 (Fénix-Ω)">
+            </div>
+            <div class="text-container">
+                <p><strong>Paciente:</strong> Paciente 13 (ID: Fénix-Ω)</p>
+                <p><strong>Función:</strong> Sujeto de investigación en el Proyecto Fénix</p>
+                <p><strong>Cometido:</strong> Participar en el tratamiento experimental con Mnemosina-X para la manipulación avanzada de la memoria.</p>
+                
+                <p><strong>Historia Clínica:</strong></p>
+                <ul>
+                    <li><strong>Síntomas iniciales:</strong> Movimientos involuntarios en las extremidades, progresando a apraxia oculomotora completa.</li>
+                    <li><strong>Evolución:</strong> Desarrollo de demencia frontotemporal con conductas infantiles inapropiadas y lenguaje obsceno involuntario.</li>
+                    <li><strong>Resultados post-mortem:</strong> Daños severos en áreas cerebrales relacionadas con el movimiento y la regulación emocional.</li>
+                    <li><strong>Causa de muerte:</strong> Paro cardiorrespiratorio debido a un episodio agudo de disautonomía.</li>
+                    <li><strong>Protocolo de manejo:</strong> Implementación del Protocolo Fénix-Ω para mantener la confidencialidad del proyecto.</li>
+                    <li><strong>Lecciones aprendidas:</strong> La necesidad de protocolos de seguridad más robustos y sistemas de monitoreo efectivos en la investigación neurológica avanzada.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="countdown-container">
+            <p class="countdown-text">PRÓXIMO BORRADO EN:</p>
+            <div id="countdown"></div>
+        </div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const target = new Date(now);
+            target.setHours(24, 0, 0, 0);
+            
+            const diff = target - now;
+            const hours = Math.floor(diff / 3600000);
+            const minutes = Math.floor((diff % 3600000) / 60000);
+            const seconds = Math.floor((diff % 60000) / 1000);
+            
+            document.getElementById('countdown').innerText = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
